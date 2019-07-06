@@ -127,11 +127,26 @@
 // person.talk();
 
 // by using arrow function we don't have to write that much code its take as simple means they don't rebind this keword
- 
-const person = {
-    talk() {
-        setTimeout(() => { console.log('this', this); },1000);
-    }
-}
 
-person.talk();
+// const person = {
+//     talk() {
+//         setTimeout(() => { console.log('this', this); },1000);
+//     }
+// }
+
+// person.talk();
+
+
+// map : used to list of item
+
+const colors = ['read', 'green', 'blue','purple'];
+
+// const colorItem = colors.map(function(color){
+//     return '<li>' + color + '</li>';
+// });
+
+// console.log(colorItem);
+
+const colorItem = colors.map(color => `<li> ${color} </li>`);
+
+console.log(colorItem);
