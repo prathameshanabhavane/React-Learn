@@ -26,3 +26,16 @@
 // x = 2;
 
 
+// Object : Its a collection of key value pairs;
+
+const person = {
+    name : 'Prathamesh',
+    walk() {},
+    talk() {},
+};
+
+person.walk();
+person[name] =  'Manik';
+
+const targetMember = 'name';
+person[targetMember.value] =  'Manik';
