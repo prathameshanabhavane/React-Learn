@@ -60,3 +60,31 @@ const walk = person.walk.bind(person);
 // console.log(walk);
 
 walk();
+
+
+// Function : its block of code;
+
+// Simple function
+// const square = function(number) {
+//     return number * number
+// }
+
+// console.log(square(5));
+
+
+// Arrow function
+
+const square = number => number * number;
+
+console.log(square(4));
+
+const jobs = [
+    {id : 1, isActive : true },
+    {id : 2, isActive : true },
+    {id : 3, isActive : false },
+]
+
+// const jobActive = jobs.filter(function(job){ return job.isActive });
+const jobActive = jobs.filter( job => job.isActive );
+
+console.log(jobActive);
