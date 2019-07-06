@@ -41,6 +41,11 @@
 // person[targetMember.value] =  'Manik';
 
 
+
+// every function in javascript is an object almost everything
+// And function have properties and method we can use
+// by using bind method we can invoke function inside object individually
+
 const person = {
     name : "Prathamesh",
     walk() {
@@ -48,9 +53,9 @@ const person = {
     }
 }
 
-// person.walk();
+person.walk();
 
-const walk = person.walk;
+const walk = person.walk.bind(person);
 
 // console.log(walk);
 
