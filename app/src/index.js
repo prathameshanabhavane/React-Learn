@@ -139,14 +139,29 @@
 
 // map : used to list of item
 
-const colors = ['read', 'green', 'blue','purple'];
+// const colors = ['read', 'green', 'blue','purple'];
 
-// const colorItem = colors.map(function(color){
-//     return '<li>' + color + '</li>';
-// });
+// // const colorItem = colors.map(function(color){
+// //     return '<li>' + color + '</li>';
+// // });
+
+// // console.log(colorItem);
+
+// const colorItem = colors.map(color => `<li> ${color} </li>`);
 
 // console.log(colorItem);
 
-const colorItem = colors.map(color => `<li> ${color} </li>`);
+// Object destructuring
 
-console.log(colorItem);
+const address = {
+    street : ' ',
+    city : ' ',
+    country : ' '
+};
+
+// const street = address.street;
+// const city = address.city;
+// const country = address.country;
+
+const { street, city, country } = address;
+// const { street : st } = address;
