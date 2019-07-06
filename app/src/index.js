@@ -28,14 +28,30 @@
 
 // Object : Its a collection of key value pairs;
 
+// const person = {
+//     name : 'Prathamesh',
+//     walk() {},
+//     talk() {},
+// };
+
+// person.walk();
+// person[name] =  'Manik';
+
+// const targetMember = 'name';
+// person[targetMember.value] =  'Manik';
+
+
 const person = {
-    name : 'Prathamesh',
-    walk() {},
-    talk() {},
-};
+    name : "Prathamesh",
+    walk() {
+        console.log(this);
+    }
+}
 
-person.walk();
-person[name] =  'Manik';
+// person.walk();
 
-const targetMember = 'name';
-person[targetMember.value] =  'Manik';
+const walk = person.walk;
+
+// console.log(walk);
+
+walk();
