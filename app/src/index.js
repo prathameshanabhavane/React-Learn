@@ -46,20 +46,20 @@
 // And function have properties and method we can use
 // by using bind method we can invoke function inside object individually
 
-const person = {
-    name : "Prathamesh",
-    walk() {
-        console.log(this);
-    }
-}
+// const person = {
+//     name : "Prathamesh",
+//     walk() {
+//         console.log(this);
+//     }
+// }
 
-person.walk();
+// person.walk();
 
-const walk = person.walk.bind(person);
+// const walk = person.walk.bind(person);
 
-// console.log(walk);
+// // console.log(walk);
 
-walk();
+// walk();
 
 
 // Function : its block of code;
@@ -74,17 +74,64 @@ walk();
 
 // Arrow function
 
-const square = number => number * number;
+// const square = number => number * number;
 
-console.log(square(4));
+// console.log(square(4));
 
-const jobs = [
-    {id : 1, isActive : true },
-    {id : 2, isActive : true },
-    {id : 3, isActive : false },
-]
+// const jobs = [
+//     {id : 1, isActive : true },
+//     {id : 2, isActive : true },
+//     {id : 3, isActive : false },
+// ]
 
-// const jobActive = jobs.filter(function(job){ return job.isActive });
-const jobActive = jobs.filter( job => job.isActive );
+// // const jobActive = jobs.filter(function(job){ return job.isActive });
+// const jobActive = jobs.filter( job => job.isActive );
 
-console.log(jobActive);
+// console.log(jobActive);
+
+// Arrow function and this keyword
+// stand alone function show window object
+/* if we used setTimeout or any function which are delay if we want to show object by 
+    using this keyword we can use arrrow function */
+
+// const person = {
+//     talk() {
+//         console.log('this', this);   
+//     }
+// }
+
+// person.talk();
+
+
+// const person = {
+//     talk() {
+//         setTimeout(function() {
+//             console.log('this', this);   
+//         },1000);
+//     }
+// }
+
+// person.talk();
+
+// To get our our object person old method
+
+// const person = {
+//     talk() {
+//         var self = this;
+//         setTimeout(function() {
+//             console.log('self', self);   
+//         },1000);
+//     }
+// }
+
+// person.talk();
+
+// by using arrow function we don't have to write that much code its take as simple means they don't rebind this keword
+ 
+const person = {
+    talk() {
+        setTimeout(() => { console.log('this', this); },1000);
+    }
+}
+
+person.talk();
