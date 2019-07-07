@@ -215,31 +215,41 @@
 
 // Inheritance
 
-class Person {
-    constructor(name) {
-        this.name = name;
-    }
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
 
-    walk() {
-        console.log("Walk");
-    }
-}
+//     walk() {
+//         console.log("Walk");
+//     }
+// }
 
-const preson = new Person('Pratham');
+// const preson = new Person('Pratham');
 
-console.log(preson.name);
+// console.log(preson.name);
 
-class Teacher extends Person {
-    constructor(name, degree) {
-        super(name);
-        this.degree = degree;
-    }
+// class Teacher extends Person {
+//     constructor(name, degree) {
+//         super(name);
+//         this.degree = degree;
+//     }
 
-    teach() {
-        console.log("Teach");
-    }
-}
+//     teach() {
+//         console.log("Teach");
+//     }
+// }
 
-const teacher = new Teacher('Manik', 'Msc');
+// const teacher = new Teacher('Manik', 'Msc');
+
+// console.log(teacher);
+
+// Modules
+
+import {Teacher} from "./Teacher";
+
+const teacher = new Teacher('Manik', 'Msc', 100);
 
 console.log(teacher);
+
+teacher.teach();
