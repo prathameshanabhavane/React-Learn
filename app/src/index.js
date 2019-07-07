@@ -153,15 +153,45 @@
 
 // Object destructuring
 
-const address = {
-    street : ' ',
-    city : ' ',
-    country : ' '
-};
+// const address = {
+//     street : ' ',
+//     city : ' ',
+//     country : ' '
+// };
 
-// const street = address.street;
-// const city = address.city;
-// const country = address.country;
+// // const street = address.street;
+// // const city = address.city;
+// // const country = address.country;
 
-const { street, city, country } = address;
-// const { street : st } = address;
+// const { street, city, country } = address;
+// // const { street : st } = address;
+
+// Spread Operator
+
+const firstArray = [1,2,3];
+const secondArray = [4,5,6];
+
+// old
+// const combined = first.concat(second);
+
+// using spread operator its defines as a three dot (...example)
+
+// const combined = [...first, ...second];
+
+const combined = [...firstArray, ...secondArray, 7,8,9]; //we can add anywhere
+
+console.log(combined);
+
+const clone = [...firstArray];
+console.log(clone);
+
+const firstObject  = {name : 'Prathamesh'};
+const secondObject = { job : 'Front end developer'};
+
+const combinedObject = {...firstObject, ...secondObject, location : 'Inida' };
+
+console.log(combinedObject);
+
+const cloneObj = {...firstObject};
+
+console.log(cloneObj);
