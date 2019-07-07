@@ -199,6 +199,22 @@
 
 // Classes
 
+// class Person {
+//     constructor(name) {
+//         this.name = name;
+//     }
+
+//     walk() {
+//         console.log("Walk");
+//     }
+// }
+
+// const preson = new Person('Pratham');
+
+// console.log(preson.name);
+
+// Inheritance
+
 class Person {
     constructor(name) {
         this.name = name;
@@ -212,3 +228,18 @@ class Person {
 const preson = new Person('Pratham');
 
 console.log(preson.name);
+
+class Teacher extends Person {
+    constructor(name, degree) {
+        super(name);
+        this.degree = degree;
+    }
+
+    teach() {
+        console.log("Teach");
+    }
+}
+
+const teacher = new Teacher('Manik', 'Msc');
+
+console.log(teacher);
