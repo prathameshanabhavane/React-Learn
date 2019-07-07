@@ -246,10 +246,15 @@
 
 // Modules
 
-import {Teacher} from "./Teacher";
+import Teacher, {promote} from "./Teacher";
+
+// Default -> import ... from '';
+// Named -> import ... from '';
 
 const teacher = new Teacher('Manik', 'Msc', 100);
 
 console.log(teacher);
 
 teacher.teach();
+
+promote();
