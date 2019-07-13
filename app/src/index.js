@@ -1,5 +1,5 @@
 
-// car, ;et and const keyword
+//var, let and const keyword
 
 // var -> fucntion
 // let -> block
