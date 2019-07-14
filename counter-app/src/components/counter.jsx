@@ -3,20 +3,15 @@ import React, {Component} from 'react';
 class Counter extends Component {
     state = {
        count : 0,
-    //    imageUrl : 'https://cdn.pixabay.com/photo/2017/07/18/15/00/autumn-2516038_960_720.jpg'
-    };
-
-    styles = {
-        fontSize : 16,
-        fontWeight : 'bold'
     };
     
     render() { 
+        let classes = "dadge m-3 badge-";
+        classes += (this.state.count === 0) ? "warning" : "primary";
         return ( 
-            <div style={{ backgroundColor: 'purple', marginTop: 30}}>
-                {/* <img src={this.state.imageUrl} alt="Image" /> */}
-                <span style={this.styles} className="badge badge-primary m-3"> {this.fromatCount()} </span> 
-                <button className="btn btn-secondary btn-sm" style={{fontSize: 20}}>Increment</button>  
+            <div>
+                <span className={classes}> {this.fromatCount()} </span> 
+                <button className="btn btn-secondary btn-sm">Increment</button>  
             </div>
         );
     }
