@@ -12,7 +12,7 @@ class Counter extends Component {
                 <span className={this.getBadgeClasses()}> {this.fromatCount()} </span> 
                 <button className="btn btn-secondary btn-sm">Increment</button>
                 <ul>
-                    {this.state.tages.map( tag => <li> {tag} </li> ) }
+                    {this.state.tages.map( tag => <li key={tag}> {tag} </li> ) }
                 </ul>
             </div>
         );
