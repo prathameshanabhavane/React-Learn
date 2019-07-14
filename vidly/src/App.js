@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
+import Movies from './component/Movies';
+
 
 function App() {
   return (
     <main className="container">
-      <h1>Hellow World </h1>
+      <Movies />
     </main>
   );
 }
