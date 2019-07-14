@@ -6,10 +6,9 @@ class Counter extends Component {
     };
     
     render() { 
-        let classes = this.getBadgeClasses();
         return ( 
             <div>
-                <span className={classes}> {this.fromatCount()} </span> 
+                <span className={this.getBadgeClasses()}> {this.fromatCount()} </span> 
                 <button className="btn btn-secondary btn-sm">Increment</button>  
             </div>
         );
