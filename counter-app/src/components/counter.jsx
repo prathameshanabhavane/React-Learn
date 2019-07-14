@@ -6,20 +6,20 @@ class Counter extends Component {
        tages : ['tag1', 'tag2', 'tag3']
     };
 
-    constructor() {
-        super();
-        this.handleIncreament = this.handleIncreament.bind(this);
-    }
+    // constructor() {
+    //     super();
+    //     this.handleIncreament = this.handleIncreament.bind(this);
+    // }
 
     //second option to use arrow function get this  because arrow function dose not rebind
 
-    // handleIncreament = () => {
+    handleIncreament = () => {
+        this.setState({ count: this.state.count + 1});
+    }
+
+    // handleIncreament() {
     //     console.log('Handling Increament', this);
     // }
-
-    handleIncreament() {
-        console.log('Handling Increament', this);
-    }
     
     render() { 
         return ( 
