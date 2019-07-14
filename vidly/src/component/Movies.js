@@ -4,8 +4,17 @@ import { getMovies } from '../services/fakeMovieService.js';
 
 class Movies extends Component {
     state = { 
-        Movies : getMovies(),
+        movies : getMovies(),
      }
+
+    handleDelete = (movie) => {
+         console.log(movie);
+         const movies = this.state.movies.filter( m => m._id !== movie._id);
+        //  this.setState({movies : movies})
+         this.setState({movies})
+    }
+
+
     render() { 
         return (  
         <table className="table">
@@ -19,13 +28,13 @@ class Movies extends Component {
           </tr>
         </thead>
         <tbody>
-        { this.state.Movies.map( movie => (
-          <tr>
+        { this.state.movies.map( movie => (
+          <tr key={movie._id}>
             <td>{movie.title}</td>
             <td>{movie.genre.name}</td>
             <td>{movie.numberInStock}</td>
             <td>{movie.dailyRentalRate}</td>
-            <td><button type="button" class="btn btn-danger">Delete</button></td>
+            <td><button type="button" onClick={() => this.handleDelete(movie)} className="btn btn-danger">Delete</button></td>
           </tr>
         ))}
         </tbody>
