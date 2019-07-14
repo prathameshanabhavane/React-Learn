@@ -13,8 +13,13 @@ class Counter extends Component {
 
     //second option to use arrow function get this  because arrow function dose not rebind
 
-    handleIncreament = () => {
+    handleIncreament = (product) => {
+        console.log(product);
         this.setState({ count: this.state.count + 1});
+    }
+
+    doHandleIncrement = () => {
+        this.handleIncreament({id:1});
     }
 
     // handleIncreament() {
@@ -25,7 +30,7 @@ class Counter extends Component {
         return ( 
             <div>
                 <span className={this.getBadgeClasses()}> {this.fromatCount()} </span> 
-                <button onClick = {this.handleIncreament} className="btn btn-secondary btn-sm">Increment</button>
+                <button onClick = {this.doHandleIncrement} className="btn btn-secondary btn-sm">Increment</button>
             </div>
         );
     }
