@@ -22,12 +22,12 @@ class Counter extends Component {
     // }
     
     render() { 
-        console.log("props", this.props)
         return ( 
             <div>
                <h4>Counter {this.props.id} </h4>
                 <span className={this.getBadgeClasses()}> {this.fromatCount()} </span> 
                 <button onClick = { () => this.handleIncreament( {id:1} ) } className="btn btn-secondary btn-sm">Increment</button>
+                <button type="button" onClick={() => this.props.onDelete(this.props.id)} className="btn btn-danger btn-sm ml-3">Delete</button>
             </div>
         );
     }
