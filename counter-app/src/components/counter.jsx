@@ -32,7 +32,7 @@ class Counter extends Component {
     }
 
     getBadgeClasses() {
-        let classes = "dadge m-3 badge-";
+        let classes = "badge m-3 badge-";
         classes += (this.state.count === 0) ? "warning" : "primary";
         return classes;
     }
