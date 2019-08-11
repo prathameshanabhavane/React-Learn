@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Like from './common/like';
-import { ListGroup } from './common/listGroup';
+import ListGroup from './common/listGroup';
 import Pagination from './common/pagination';
 import { getMovies } from '../services/fakeMovieService.js';
 import { paginate } from '../utils/pajinate';
@@ -59,10 +59,14 @@ class Movies extends Component {
 
         return (  
         <div className="row">
-          <div class="col-12 col-md-2">
-              <ListGroup items={this.state.genres} onItemsSelect={this.handeleGenreSelect} />
+          <div class="col-12 col-md-3">
+              <ListGroup 
+                items={this.state.genres} 
+                textProperty="name"
+                valueProperty="_id"
+                onItemsSelect={this.handeleGenreSelect} />
           </div>
-          <div class="col-12 col-md-10">
+          <div class="col-12 col-md-9">
             <p className="pt-3">Showing {count} movies in database.  </p>
             <table className="table">
               <thead>
