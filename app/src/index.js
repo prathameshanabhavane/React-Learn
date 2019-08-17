@@ -57,7 +57,7 @@
 
 // const walk = person.walk.bind(person);
 
-// // console.log(walk);
+// console.log(walk);
 
 // walk();
 
