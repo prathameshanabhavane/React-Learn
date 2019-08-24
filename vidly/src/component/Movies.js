@@ -5,14 +5,15 @@ import Pagination from './common/pagination';
 import { getMovies } from '../services/fakeMovieService.js';
 import { paginate } from '../utils/pajinate';
 import { getGenres } from '../services/fakeGenreService';
-
+import _ from 'lodash';
 
 class Movies extends Component {
     state = { 
         movies : getMovies(),
         genres : [],
         currentPage : 1,
-        pageSize : 4
+        pageSize : 4,
+        sortColumn : { path:'title' , order:'asc'}
      }
 
     componentDidMount() {
@@ -51,7 +52,7 @@ class Movies extends Component {
     }
 
     handleSort = path => {
-      console.log(path);
+      this.setState( {sortColumn : { path, order:'asc' }} )
     }
 
     render() { 
@@ -64,6 +65,9 @@ class Movies extends Component {
         const filtered = selectedGenre && selectedGenre._id
           ? allMoveis.filter(m => m.genre._id === selectedGenre._id) 
           : allMoveis;
+
+        
+
         const movies = paginate(filtered, currentPage, pageSize);
 
         return (  
