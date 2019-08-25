@@ -19,7 +19,7 @@ class App extends Component {
             <Route path="/products/:id" component={ProductDetails} />
             <Route path="/products" render={(props) => <Products sortBy="newest" {...props}/>} />
             <Route path="/admin" component={Dashboard} />
-            <Route path="/posts/:year/:month" component={Posts} />
+            <Route path="/posts/:year?/:month?" component={Posts} />
             <Route path="/" exact component={Home} />
           </Switch>
         </div>
