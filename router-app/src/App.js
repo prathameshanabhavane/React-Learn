@@ -7,12 +7,19 @@ import Dashboard from "./components/admin/dashboard";
 import ProductDetails from "./components/productDetails";
 import NotFound from "./components/notFound";
 import "./App.css";
+import { Route } from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div>
         <NavBar />
+        <div className="content">
+          <Route path="/" component={Home} />
+          <Route path="/products" component={Products} />
+          <Route path="/admin" component={Dashboard} />
+          <Route path="/posts" component={Posts} />
+        </div>
       </div>
     );
   }
