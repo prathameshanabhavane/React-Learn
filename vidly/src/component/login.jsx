@@ -4,7 +4,8 @@ class Login extends Component {
 
 	state = {
 		account : {
-			username : ' ',
+			// username : null;
+			// username : ' ',
 			password : ' '
 		}
 	}
