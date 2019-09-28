@@ -6,17 +6,26 @@ class Login extends Component {
 		account : {
 			username : ' ',
 			password : ' '
-		}
+		},
+		error : {}
 	}
 
-	username = React.createRef();
+	// username = React.createRef();
 
 	// componentDidMount() {
 	// 	this.username.current.focus();
 	// }
 
+	validate = () => {
+		return { Username : 'Username is required.' };
+	}
+
 	handleSubmit = e => {
 		e.preventDefault();
+
+		const error = this.validate();
+		this.setState({ error });
+		if(error) return;
 
 		// call the server
 		const username = this.username.current.value;
