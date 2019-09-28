@@ -17,18 +17,26 @@ class Login extends Component {
 	// }
 
 	validate = () => {
-		return { Username : 'Username is required.' };
+		const errors = {};
+
+		const { account } = this.state;
+		if(account.username.trim() === '')
+			errors.username = 'Username is required.';
+		if(account.password.trim() === '')
+			errors.password = 'Password is required.';
+
+		return Object.keys(errors).length === 0 ? null : errors;
 	}
 
 	handleSubmit = e => {
 		e.preventDefault();
 
-		const error = this.validate();
-		this.setState({ error });
-		if(error) return;
+		const errors = this.validate();
+		console.log(errors);
+		this.setState({ errors });
+		if(errors) return;
 
 		// call the server
-		const username = this.username.current.value;
 		console.log('Submitted');
 	}
 
