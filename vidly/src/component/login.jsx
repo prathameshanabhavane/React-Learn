@@ -7,7 +7,7 @@ class Login extends Component {
 			username : ' ',
 			password : ' '
 		},
-		error : {}
+		errors : {}
 	}
 
 	// username = React.createRef();
@@ -32,8 +32,8 @@ class Login extends Component {
 		e.preventDefault();
 
 		const errors = this.validate();
-		console.log(errors);
-		this.setState({ errors });
+		// console.log(errors);
+		this.setState({ errors : errors || {} });
 		if(errors) return;
 
 		// call the server
@@ -47,7 +47,7 @@ class Login extends Component {
 	}
 
 	render(){
-		const { account } = this.state;
+		const { account, errors } = this.state;
 		return(
 			<div className="row align-item-center">
 				<div className="col-12 col-lg-4 mx-auto">
@@ -57,12 +57,14 @@ class Login extends Component {
 						  value={account.username} 
 						  label="Username" 
 						  onChange={this.handleChange} 
+						  error={errors.username}
 						/>
 						<Input 
 						  name="password" 
 						  value={account.password} 
 						  label="Password" 
 						  onChange={this.handleChange} 
+						  error={errors.password}
 						/>
 					  <button type="submit" className="btn btn-primary">Submit</button>
 					</form>
