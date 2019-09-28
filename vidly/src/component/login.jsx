@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-
+import Input from './common/input'
 class Login extends Component {
 
 	state = {
 		account : {
-			// username : null;
-			// username : ' ',
+			username : ' ',
 			password : ' '
 		}
 	}
@@ -36,14 +35,18 @@ class Login extends Component {
 			<div className="row align-item-center">
 				<div className="col-12 col-lg-4 mx-auto">
 					<form onSubmit={this.handleSubmit}>
-					  <div className="form-group">
-						<label htmlFor="username">Username</label>
-						<input value={account.username} onChange={this.handleChange} name="username" autoFocus ref={this.username} type="text" className="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email" />
-					  </div>
-					  <div className="form-group">
-						<label htmlFor="password">Password</label>
-						<input value={account.password} onChange={this.handleChange} name="password" type="password" className="form-control" id="password" placeholder="Password" />
-					  </div>
+					  	<Input 
+						  name="username" 
+						  value={account.username} 
+						  label="Username" 
+						  onChange={this.handleChange} 
+						/>
+						<Input 
+						  name="password" 
+						  value={account.password} 
+						  label="Password" 
+						  onChange={this.handleChange} 
+						/>
 					  <button type="submit" className="btn btn-primary">Submit</button>
 					</form>
 				</div>
