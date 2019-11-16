@@ -2,9 +2,9 @@ import React from 'react';
 import Joi from 'joi-browser';
 import Form from './common/form';
 import { getMovie, saveMovie } from '../services/fakeMovieService.js';
-import { getGenres } from '../services/fakeGenreService';;
+import { getGenres } from '../services/fakeGenreService';
 
-class MovieForm extends Form {
+class AddMovies extends Form {
     state = { 
         data : {
 			title : '',
@@ -19,8 +19,8 @@ class MovieForm extends Form {
     schema = {
         _id: Joi.string(),
 		title: Joi.string().required().label('Title'),
-        genreId: Joi.string().required().label('Genre'),
-        numberInStock: Joi.string().min(0).max(100).required().label('Number In Stock'),
+        genre: Joi.string().required().label('Genre'),
+        numberInStock: Joi.string().min(0).max(100).required().label('Name'),
 		dailyRentalRate: Joi.string().min(0).max(100).required().label('Rate'),
     };
     
@@ -38,7 +38,7 @@ class MovieForm extends Form {
     }
 
     mapToViewModel(movie) {
-        return {                                                                                                
+        return {
             _id: movie._id,
             title: movie.title,
             genreId: movie.genre._id,
@@ -63,7 +63,7 @@ class MovieForm extends Form {
                         <form onSubmit={this.handleSubmit}>
                             {this.renderInput('title', 'Title')}
                             {this.renderSelect('genreId', 'Genre', this.state.genres)}
-                            {this.renderInput('numberInStock', 'Number in Stcok', 'number')}
+                            {this.renderInput('number_in_stock', 'Number in Stcok', 'number')}
                             {this.renderInput('dailyRentalRate', 'Rate')}
                             {this.renderButton("Save")}
                         </form>
@@ -74,4 +74,4 @@ class MovieForm extends Form {
     }
 }
  
-export default MovieForm;
+export default AddMovies;

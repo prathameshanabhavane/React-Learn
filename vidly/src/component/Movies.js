@@ -5,6 +5,7 @@ import Pagination from './common/pagination';
 import { getMovies } from '../services/fakeMovieService.js';
 import { paginate } from '../utils/pajinate';
 import { getGenres } from '../services/fakeGenreService';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 class Movies extends Component {
@@ -88,6 +89,9 @@ class Movies extends Component {
                 onItemsSelect={this.handeleGenreSelect} />
           </div>
           <div className="col-12 col-md-9">
+            <Link to="/movies/new" className="btn btn-primary" style={{ marginBottom: 20 }}>
+              New Movies
+            </Link>
             <p className="pt-3">Showing {totalCount} movies in database.  </p>
             <MoviesTable 
               movies={movies}
